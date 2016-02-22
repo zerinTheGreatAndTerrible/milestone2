@@ -1,10 +1,13 @@
 # USU CS2610
 
-List all Today I Learned entries
-Show single entry
-Create an entry
-Update an entry
-Delete an entry
+App functionality:
+
+* List all Today I Learned entries
+* Show single entry
+* Create an entry
+* Update an entry
+* Delete an entry
+* Add a user login
 
 Three requirements for this assignment:
 
