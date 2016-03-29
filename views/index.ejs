@@ -1,2 +1,16 @@
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+using eval
+var title = "my title";
+var result = '"<body>"+ title +</body>"';
+//console.log(result);
+
+var template = "<body><%= title %></body>";
+var regex = /<\%\= (.*)\%\>/;
+var match = template.replace(regex,function(match, capture,offset,original){
+  return'"+'+capture+'+"';
+});
+console.log(match);
+match = '"' + match + '"'
+console.log(match);
+
+result = eval(match);
+console.log(result);
