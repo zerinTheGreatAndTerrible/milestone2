@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
 router.get('/add', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body);
-  console.log(entries);
   res.render('add', { title: 'build data here', entries:entries});
 });
 
