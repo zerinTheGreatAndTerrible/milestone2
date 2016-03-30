@@ -7,9 +7,7 @@ router.get('/', function(req, res, next) {
 });
 /* the create database router*/
 router.get('/', function(req, res, next) {
-  console.log(req.body);
-  entries.push(req.body);
-  console.log(entries);
+
   res.render('CreateData', { title: 'build data here', entries:entries});
 });
 
