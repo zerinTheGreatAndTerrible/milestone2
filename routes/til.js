@@ -13,7 +13,7 @@ router.get('/add', function(req, res, next) {
 router.post('/create', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body);
-  console.log(entries);
+  console.log(til);
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
 });
 module.exports = router;
