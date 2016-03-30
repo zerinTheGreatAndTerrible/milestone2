@@ -7,9 +7,12 @@ router.get('/', function(req, res, next) {
 });
 /* the create database router*/
 router.get('/add', function(req, res, next) {
-  console.log(req.body);
-  entries.push(req.body);
   res.render('add', { title: 'build data here', entries:entries});
 });
-
+/*when you hit submit*/
+router.post('/create', function(req, res, next) {
+  console.log(req.body);
+  entries.push(req.body);
+  res.render('todayILearned', { title: 'Today I Learned', entries:entries});
+});
 module.exports = router;
