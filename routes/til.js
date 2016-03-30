@@ -7,8 +7,10 @@ router.get('/', function(req, res, next) {
 });
 /* the create database router*/
 router.get('/', function(req, res, next) {
-
-  res.render('CreateData', { title: 'build data here', entries:entries});
+  console.log(req.body);
+  entries.push(req.body);
+  console.log(entries);
+  res.render('add', { title: 'build data here', entries:entries});
 });
 
 module.exports = router;
