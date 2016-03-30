@@ -14,6 +14,6 @@ router.post('/create', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body);
   console.log(entries);
-  res.render('todayILearned', { title: 'Today I Learned', entries:entries});
+  res.render('til', { title: 'Today I Learned', entries:entries});
 });
 module.exports = router;
