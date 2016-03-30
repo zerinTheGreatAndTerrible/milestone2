@@ -6,11 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
 });
 /* the create database router*/
-router.get('/', function(req, res, next) {
+router.get('/add', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body);
   console.log(entries);
-  res.render('til/add', { title: 'build data here', entries:entries});
+  res.render('add', { title: 'build data here', entries:entries});
 });
 
 module.exports = router;
