@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body);
   console.log(entries);
-  res.render('add', { title: 'build data here', entries:entries});
+  res.render('til/add', { title: 'build data here', entries:entries});
 });
 
 module.exports = router;
