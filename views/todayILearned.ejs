@@ -1,7 +1,7 @@
 <%include head%>
 <%for (var i = 0;i<entries.length;i++)
 {%>
-<%= entries[i].slug%>
+<li><%ahref='/entries/<%i%>'><%=entries[i].slug></a></li>
 <br>
 <%}%>
 <%include foot%>
