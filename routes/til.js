@@ -18,9 +18,6 @@ router.post('/create', function(req, res, next) {
 });
 /* the create database router*/
 router.get('/create', function(req, res, next) {
-  console.log(req.body);
-  entries.push(req.body);
-  console.log(entries);
   res.render('todayILearned', { title: 'build data here', entries:entries});
 });
 module.exports = router;
