@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var entries = [{slug:"what did I learn today",body:"that I am awesome"}]
+var entries = [{slug:"what did I learn today",body:"that I am awesome"},{slug:"da da da",body:"dobedobedobe"}]
 /* GET til listing. */
 router.get('/', function(req, res, next) {
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
