@@ -1,7 +1,8 @@
 <%include head%>
 <%for (var i = 0;i<entries.length;i++)
 {%>
-<li><a href='/entries/<%i%>'><%=entries[i].slug%></a></li>
+<a href='/entries/<%i%>'><%=entries[i].slug%></a>
 <br>
+
 <%}%>
 <%include foot%>
