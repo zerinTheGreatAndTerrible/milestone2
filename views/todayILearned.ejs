@@ -1,3 +1,6 @@
 <%include head%>
-<%=entries%>
+<%for (var i = 0;i<entries.length;i++)
+{%>
+<%= entries[i].slug%>
+<%}%>
 <%include foot%>
