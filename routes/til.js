@@ -10,7 +10,7 @@ router.get('/add', function(req, res, next) {
   res.render('til/add', { title: 'build data here', entries:entries});
 });
 /*when you hit submit*/
-router.post('/create', function(req, res, next) {
+router.post('/til/create', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body)
   console.log(enttries);
