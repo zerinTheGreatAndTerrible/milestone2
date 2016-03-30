@@ -17,6 +17,6 @@ router.get('/create', function(req, res, next) {
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
 });
 router.get('/:id', function(req, res, next) {
-  res.render('til/entry', { title: 'build data here', entry:entries[req.param.id]});
+  res.render('til/entry', { title: 'build data here', entry:entries[req.params.id]});
 });
 module.exports = router;
