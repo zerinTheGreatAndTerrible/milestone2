@@ -9,11 +9,15 @@ router.get('/', function(req, res, next) {
 router.get('/add', function(req, res, next) {
   res.render('add', { title: 'build data here', entries:entries});
 });
+/* the create database router*/
+router.get('/create', function(req, res, next) {
+  res.render('todayILearned', { title: 'build data here', entries:entries});
+});
 /*when you hit submit*/
-router.post('/', function(req, res, next) {
+router.post('/create', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body);
   console.log(entries);
-  res.render('til', { title: 'Today I Learned', entries:entries});
+  res.render('todayILearned', { title: 'Today I Learned', entries:entries});
 });
 module.exports = router;
