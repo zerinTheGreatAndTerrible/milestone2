@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var entries = [{slug:"what did I learn today",body:"that I am awesome"},{slug:"da da da",body:"dobedobedobe"}]
-var entry ={slug:,body:}
 /* GET til listing. */
 router.get('/', function(req, res, next) {
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
@@ -11,9 +10,10 @@ router.get('/add', function(req, res, next) {
   res.render('til/add', { title: 'build data here', entries:entries});
 });
 /*when you hit submit*/
-router.post('/til/create', function(req, res, next) {
+router.post('/', function(req, res, next) {
   console.log(req.body);
-  console.log(entry);
+  entries.push(req.body)
+  console.log(enttries);
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
 });
 module.exports = router;
