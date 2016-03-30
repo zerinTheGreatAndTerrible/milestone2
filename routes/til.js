@@ -7,16 +7,10 @@ router.get('/', function(req, res, next) {
 });
 /* the create database router*/
 router.get('/add', function(req, res, next) {
-  console.log(req.body);
-  entries.push(req.body);
-  console.log(entries);
   res.render('til/add', { title: 'build data here', entries:entries});
 });
 /*when you hit submit*/
 router.post('/til/create', function(req, res, next) {
-  console.log(req.body);
-  entries.push(req.body);
-  console.log(entries);
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
 });
 module.exports = router;
