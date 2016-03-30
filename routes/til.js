@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
 });
 /* the create database router*/
-router.get('/add', function(req, res, next) {
+router.get('/til/add', function(req, res, next) {
   console.log(req.body);
   entries.push(req.body);
   console.log(entries);
