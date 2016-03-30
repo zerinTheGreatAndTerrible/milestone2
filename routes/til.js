@@ -11,13 +11,9 @@ router.get('/add', function(req, res, next) {
 });
 /*when you hit submit*/
 router.post('/create', function(req, res, next) {
-  console.log(req.body);
-  entries.push(req.body);
+  console.log(req.param);
+  entries.push(req.param);
   console.log(entries);
   res.render('todayILearned', { title: 'Today I Learned', entries:entries});
-});
-/* the create database router*/
-router.get('/create', function(req, res, next) {
-  res.render('todayILearned', { title: 'build data here', entries:entries});
 });
 module.exports = router;
