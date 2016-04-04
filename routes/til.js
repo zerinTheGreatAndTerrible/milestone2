@@ -3,7 +3,15 @@ var router = express.Router();
 var entries = [{slug:"what did I learn today",body:"that I am awesome"},{slug:"da da da",body:"dobedobedobe"}]
 /* GET til listing. */
 router.get('/', function(req, res, next) {
-  res.render('todayILearned', { title: 'Today I Learned', entries:entries});
+  req.db.driver.execQuery(
+    "SELECT*FROM entries;",
+    function(err,data){
+      if(err){
+        console.log(err);
+      }
+  res.render('todayILearned', { title: 'Today I Learned', entries:data});
+    }
+};
 });
 /* the create database router*/
 router.get('/add', function(req, res, next) {
