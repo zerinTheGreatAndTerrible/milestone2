@@ -24,12 +24,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var orm = require('orm');
-var db-connection-string = "postgres://suzwdirecndlaq::5pNkrqWzNKLD-QwiuVqcUxQpUF@ec2-54-235-93-178.compute-1.amazonaws.com/da8smrghkvoon9";
-app.use(orm.express(string, {
-     define: function (db, models, next) {
-        next();
-    }
- }));
+var localstring = "postgres://cs2610:foo@localhost/entries";
+var dbstring = process.env.DATABASE_URL || localstring;
+app.use(orm.express(dbstring, {
+ define: function (db, models, next) {
+ next();
+ }
+}));
 
 app.use('/', routes);
 app.use('/til', til);
