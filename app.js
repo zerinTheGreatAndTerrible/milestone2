@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 var orm = require('orm');
-var localstring = "postgres://cs2610:foo@localhost/entries";
+var localstring = " postgres://gifafxkyoiczrq:7uqtBxCAvUF2-sZ9W1Zwtxyh8r@ec2-23-23-224-174.compute-1.amazonaws.com:5432/d3hmhk3n2iqi9f";
 var dbstring = process.env.DATABASE_URL || localstring;
 app.use(orm.express(dbstring, {
  define: function (db, models, next) {
