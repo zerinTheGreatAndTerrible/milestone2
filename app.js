@@ -13,25 +13,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-var orm = require('orm');
-var localstring = " postgres://gifafxkyoiczrq:7uqtBxCAvUF2-sZ9W1Zwtxyh8r@ec2-23-23-224-174.compute-1.amazonaws.com:5432/d3hmhk3n2iqi9f";
-var dbstring = process.env.DATABASE_URL || localstring;
-app.use(orm.express(dbstring, {
- define: function (db, models, next) {
- next();
- }
-}));
-/* READ all: GET entries listing. */
-router.get('/', function(req, res, next) {
- req.db.driver.execQuery(
- "SELECT * FROM entries",
- function (err, data) {
- if(err){console.log(err);}
- console.log(data);
- res.render('entries/index', { title: 'Blog', entries: data });
- }
-)
-});
+
 // uncomment after placing your favicon in /public username,pasword databasename
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
