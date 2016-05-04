@@ -13,8 +13,27 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+var orm = require('orm');
+var localstring = "postgres://cs2610:foo@localhost/entries";
+var dbstring = process.env.DATABASE_URL || localstring;
+app.use(orm.express(dbstring, {
+ define: function (db, models, next) {
+ next();
+ }
+}));
+/* READ all: GET entries listing. */
+router.get('/', function(req, res, next) {
+ req.db.driver.execQuery(
+ "SELECT * FROM entries",
+ function (err, data) {
+ if(err){console.log(err);}
+ console.log(data);
+ res.render('entries/index', { title: 'Blog', entries: data });
+ }
+)
+});
+// uncomment after placing your favicon in /public username,pasword databasename
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
